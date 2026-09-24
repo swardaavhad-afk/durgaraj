@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router';
-import { events } from '../data/mockData';
+import { useEvents } from '../data/eventStore';
 
 export function GalleryPage() {
+  const events = useEvents();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');

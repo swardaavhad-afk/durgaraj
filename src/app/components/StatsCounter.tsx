@@ -1,15 +1,16 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'motion/react';
-import { Users, Mountain, Calendar, Shield } from 'lucide-react';
+import { Users, Mountain, Award } from 'lucide-react';
 
 interface StatItemProps {
   icon: React.ReactNode;
   value: number;
   suffix: string;
   label: string;
+  description: string;
 }
 
-function StatItem({ icon, value, suffix, label }: StatItemProps) {
+function StatItem({ icon, value, suffix, label, description }: StatItemProps) {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -65,6 +66,7 @@ function StatItem({ icon, value, suffix, label }: StatItemProps) {
         {count.toLocaleString()}{suffix}
       </div>
       <div className="text-white/80 text-lg">{label}</div>
+      <p className="text-white/60 text-sm leading-relaxed mt-3 max-w-xs mx-auto">{description}</p>
     </motion.div>
   );
 }
@@ -72,35 +74,32 @@ function StatItem({ icon, value, suffix, label }: StatItemProps) {
 export function StatsCounter() {
   const stats = [
     {
-      icon: <Users className="w-8 h-8 text-secondary" />,
-      value: 19000,
-      suffix: '+',
-      label: 'Happy Adventurers'
-    },
-    {
       icon: <Mountain className="w-8 h-8 text-secondary" />,
-      value: 1800,
+      value: 5000,
       suffix: '+',
-      label: 'Camps & Treks'
+      label: 'Camps & Treks',
+      description: 'Adventure camps and trekking experiences conducted by Durgaraj.'
     },
     {
-      icon: <Calendar className="w-8 h-8 text-secondary" />,
-      value: 25,
+      icon: <Users className="w-8 h-8 text-secondary" />,
+      value: 80000,
       suffix: '+',
-      label: 'Years Experience'
+      label: 'Happy Adventures',
+      description: 'Adventures and experiences shared with participants.'
     },
     {
-      icon: <Shield className="w-8 h-8 text-secondary" />,
-      value: 45,
+      icon: <Award className="w-8 h-8 text-secondary" />,
+      value: 100,
       suffix: '+',
-      label: 'Trained Volunteers'
+      label: 'Trained Volunteers',
+      description: "Trained volunteers supporting Durgaraj's adventure activities."
     }
   ];
 
   return (
     <section className="py-20 bg-primary text-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 max-w-6xl mx-auto">
           {stats.map((stat, index) => (
             <StatItem key={index} {...stat} />
           ))}

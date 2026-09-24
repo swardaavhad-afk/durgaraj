@@ -5,13 +5,15 @@ import {
   Star, CheckCircle2, TrendingUp, Users, Mountain, Clock,
   Phone, MessageCircle, Target, Trophy, Compass
 } from 'lucide-react';
-import { events, testimonials } from '../data/mockData';
+import { testimonials } from '../data/mockData';
+import { useEvents } from '../data/eventStore';
 import { Badge } from '../components/ui/badge';
 import { StatsCounter } from '../components/StatsCounter';
 import { toast } from 'sonner';
 import logo from '@/assets/484ce3483d8a32e88cf47809ab7c80088f0be508.png';
 
 export function HomePage() {
+  const events = useEvents();
   const featuredEvents = events.filter(e => e.isFeatured).slice(0, 3);
 
   const handleWhatsAppGroup = () => {

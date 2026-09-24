@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { MapPin, Calendar, Clock, ArrowRight, Filter, X, MessageCircle } from 'lucide-react';
-import { events } from '../data/mockData';
+import { useEvents } from '../data/eventStore';
 import { Badge } from '../components/ui/badge';
 
 export function EventsListingPage() {
+  const events = useEvents();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('All');
   const [selectedDuration, setSelectedDuration] = useState<string>('All');

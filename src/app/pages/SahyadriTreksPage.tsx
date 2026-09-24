@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { MapPin, Clock, IndianRupee, Filter, TrendingUp, Calendar, MessageCircle, Phone } from 'lucide-react';
-import { events } from '../data/mockData';
+import { useEvents } from '../data/eventStore';
 import { Badge } from '../components/ui/badge';
 
 export function SahyadriTreksPage() {
+  const events = useEvents();
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all');
   const [selectedDuration, setSelectedDuration] = useState<string>('all');
   const [selectedMonth, setSelectedMonth] = useState<string>('all');

@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from 'react-router';
 import { useState, useEffect } from 'react';
-import { Menu, X, User, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail, KeyRound } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { WhatsAppButton, MobileStickyBar } from '../WhatsAppButton';
 import logo from '@/assets/484ce3483d8a32e88cf47809ab7c80088f0be508.png';
@@ -25,7 +25,7 @@ export function RootLayout() {
 
   const navLinks = [
     { to: '/', label: 'Home' },
-    { to: '/sahyadri-treks', label: 'Sahyadri Treks' },
+    { to: '/himalaya-treks', label: 'Himalaya Treks' },
     { to: '/events', label: 'All Events' },
     { to: '/training', label: 'Training' },
     { to: '/blog', label: 'Blog' },
@@ -68,13 +68,13 @@ export function RootLayout() {
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-4 group">
+            <Link to="/" className="flex items-center gap-4 group shrink-0">
               <img 
                 src={logo} 
                 alt="Durgaraj Adventures Logo" 
                 className="h-16 w-16 object-contain group-hover:scale-105 transition-transform"
               />
-              <div className="hidden md:block">
+              <div className="hidden md:block w-[150px]">
                 <div className="text-secondary font-bold text-2xl tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
                   DURGARAJ
                 </div>
@@ -85,12 +85,12 @@ export function RootLayout() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex flex-1 min-w-0 items-center justify-end gap-0 xl:gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all relative ${
+                    className={`px-2 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium whitespace-nowrap transition-all relative ${
                     location.pathname === link.to
                       ? 'text-secondary bg-secondary/5'
                       : 'text-foreground hover:text-secondary hover:bg-muted'
@@ -110,10 +110,10 @@ export function RootLayout() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3 shrink-0">
               <Link
                 to="/contact"
-                className="px-6 py-2.5 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all font-semibold text-sm shadow-sm hover:shadow-md"
+                className="px-4 xl:px-5 py-2.5 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all font-semibold text-sm shadow-sm hover:shadow-md whitespace-nowrap"
               >
                 Book Trek
               </Link>
@@ -175,6 +175,15 @@ export function RootLayout() {
 
       {/* Mobile Sticky Bar */}
       <MobileStickyBar />
+
+      <Link
+        to="/control-room"
+        aria-label="Private admin access"
+        title="Private admin access"
+        className="fixed bottom-5 left-5 z-[60] flex h-9 w-9 items-center justify-center rounded-full border border-white/70 bg-primary/90 text-primary-foreground shadow-lg opacity-35 transition-opacity hover:opacity-100"
+      >
+        <KeyRound className="h-4 w-4" />
+      </Link>
 
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-16 pb-24 lg:pb-16 border-t border-primary/20">

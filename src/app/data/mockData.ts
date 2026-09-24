@@ -856,57 +856,7 @@ export interface TrainingProgram {
   outcomes: string[];
 }
 
-export const trainingPrograms: TrainingProgram[] = [
-  {
-    id: '1',
-    title: 'Basic Mountaineering Course',
-    marathiTitle: 'मूलभूत गिर्यारोहण अभ्यासक्रम',
-    description: 'Learn fundamental mountaineering skills including rope work, navigation, and safety protocols.',
-    duration: '7 Days',
-    level: 'Beginner',
-    price: 15000,
-    image: 'https://images.unsplash.com/photo-1771365155373-b514a58b9e6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb2NrJTIwY2xpbWJpbmclMjBhZHZlbnR1cmUlMjBleHRyZW1lfGVufDF8fHx8MTc3MjM2NzEyMHww&ixlib=rb-4.1.0&q=80&w=1080',
-    modules: [
-      'Introduction to Mountaineering',
-      'Rope Work and Knots',
-      'Map Reading and Navigation',
-      'Camping Techniques',
-      'First Aid and Rescue',
-      'Weather Understanding',
-      'Practical Field Training'
-    ],
-    outcomes: [
-      'Certified Basic Mountaineer',
-      'Independent Trek Planning Skills',
-      'Safety and Rescue Knowledge',
-      'Confidence in Mountain Terrain'
-    ]
-  },
-  {
-    id: '2',
-    title: 'Rock Climbing Workshop',
-    marathiTitle: 'खडक गिर्यारोहण कार्यशाळा',
-    description: 'Master the art of rock climbing with professional instructors using international safety standards.',
-    duration: '3 Days',
-    level: 'Intermediate',
-    price: 8000,
-    image: 'https://images.unsplash.com/photo-1771365155373-b514a58b9e6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb2NrJTIwY2xpbWJpbmclMjBhZHZlbnR1cmUlMjBleHRyZW1lfGVufDF8fHx8MTc3MjM2NzEyMHww&ixlib=rb-4.1.0&q=80&w=1080',
-    modules: [
-      'Climbing Equipment Knowledge',
-      'Belaying Techniques',
-      'Route Planning',
-      'Top Rope Climbing',
-      'Lead Climbing Basics',
-      'Safety Protocols'
-    ],
-    outcomes: [
-      'Rock Climbing Certification',
-      'Equipment Handling Skills',
-      'Route Reading Ability',
-      'Belaying Certification'
-    ]
-  }
-];
+export const trainingPrograms: TrainingProgram[] = [];
 
 // Testimonials
 export const testimonials = [

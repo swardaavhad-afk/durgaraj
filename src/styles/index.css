@@ -1,3 +1,25 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+.admin-input {
+	display: block;
+	width: 100%;
+	margin-top: 0.5rem;
+	border: 1px solid #e2e8f0;
+	border-radius: 0.75rem;
+	padding: 0.75rem 1rem;
+	font-weight: 400;
+	outline: none;
+}
+
+.admin-label {
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+
+.admin-input:focus {
+	border-color: #d98b45;
+	box-shadow: 0 0 0 2px rgb(217 139 69 / 20%);
+}

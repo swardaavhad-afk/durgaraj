@@ -6,7 +6,7 @@ import {
   X, MessageCircle, Phone, Shield, Award, Heart, IndianRupee, Mountain,
   ChevronDown, ChevronLeft, ChevronRight, Share2, Star
 } from 'lucide-react';
-import { events } from '../data/mockData';
+import { useEvents } from '../data/eventStore';
 import { toast } from 'sonner';
 import { Badge } from '../components/ui/badge';
 
@@ -15,6 +15,7 @@ type TabType = 'overview' | 'itinerary' | 'included' | 'bring' | 'prerequisites'
 export function EventDetailPage() {
   const { eventId } = useParams();
   const navigate = useNavigate();
+  const events = useEvents();
   const event = events.find((e) => e.id === eventId);
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
